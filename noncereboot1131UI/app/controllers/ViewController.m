@@ -18,14 +18,12 @@
 
 @end
 
-mach_port_t tfp0;
-
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    kern_return_t ret = multi_path_go();
+    kern_return_t ret = vfs_sploit();
     if (ret != KERN_SUCCESS) {
         exit(-1);
     }
